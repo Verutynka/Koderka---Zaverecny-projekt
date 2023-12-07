@@ -1,0 +1,357 @@
+/* intuitivnější box-sizing pro všechny prvky na stránce */
+html { box-sizing: border-box; }
+*, ::before, ::after { box-sizing: inherit; }
+
+
+$c-background-primary: #ffffff;
+$c-background-secondary: #F0F0F0;
+$c-primary: #000000;
+$c-accent: #cda792;
+$c-title-light: #ffffff;
+$c-text-light: #ffffff;
+$c-header: #000000;
+$c-footer: #000000;
+
+$font-default: 'Open Sans', sans-serif;
+$font-special: 'Raleway', sans-serif;
+
+$spacer: 1rem;
+$spacer-quarter: calc($spacer / 4);
+$spacer-half: calc($spacer / 2);
+$spacer-double: calc($spacer * 2);
+
+
+body {
+    margin: 0;
+    font-family: $font-default;
+    background-color: $c-background-primary;
+}
+
+h1, h2, h4 {
+    font-family: $font-special;
+    font-weight: normal;
+    margin: 0;
+}
+
+h1 { font-size: 2rem; }
+h2 { font-size: 1.5rem; }
+h4 { font-size: 1.1rem; }
+
+:is(h1, h2, h4):first-child {
+    margin-top: 0;
+}
+
+
+/*
+ ***************************************
+            Tlačítko
+ ***************************************
+*/
+
+.button {
+    background-color: $c-accent;
+    font-size: 1rem;
+    padding: $spacer-quarter $spacer-half;
+    border: 1px solid black;
+    cursor: pointer;
+}
+
+
+/*
+ ***************************************
+            Header
+ ***************************************
+*/
+
+.header{
+
+    display: grid;
+    gap: $spacer;
+
+    grid-template-columns: 1fr;
+    grid-template-rows: 2rem 6rem 3rem 3rem;
+
+    grid-template-areas: 
+        "header__contact"
+        "header__left"
+        "header__icons"
+        "header__menu";
+
+    &__contact {
+        background-color: $c-header;
+        color: $c-text-light;
+        width: 100%;
+        font-size: 14px;
+        text-align: center;
+        padding: $spacer-half $spacer-double;
+    }
+
+    &__contact-email {
+        margin-right: $spacer;
+        color: $c-text-light;
+
+        &:hover,
+        &:focus {
+            color: $c-accent;
+        }
+    }
+
+    &__left {
+        min-width: 400px;
+        margin-left: $spacer;
+        margin-right: $spacer;
+        height: 100%;
+        display: flex;
+        justify-content: left;
+        place-content: center;
+    }
+
+    &__logo {
+        height: 100px;
+    }
+
+    &__title {
+        margin-left: $spacer-double;
+        align-self: center;
+    }
+
+    &__icons {
+        align-self: center;
+    }
+
+    &__icons-menu {
+        display: flex;
+        list-style: none;
+        justify-content: right;
+        margin: 0;
+        margin-left: $spacer;
+        margin-right: $spacer;
+        padding: 0;
+    }
+
+    &__icons-account {
+        margin-right: $spacer;
+    }
+
+    &__icons-link {
+        text-decoration: none;
+        color: $c-primary;
+
+        &:hover,
+        &:focus {
+            color: $c-accent;
+        }
+    }
+
+    &__menu {
+        margin: 0;
+        margin-left: $spacer;
+        margin-right: $spacer;
+        align-self: center;
+    }
+
+    &__menu-list {
+        display: flex;
+        list-style: none;
+        justify-content: center;
+        margin: 0;
+        padding: 0;
+    }
+
+    &__menu-link {
+        text-decoration: none;
+        padding: $spacer-half $spacer;
+        color: $c-primary;
+
+        &:hover,
+        &:focus {
+            background-color: $c-accent;
+        }
+    }
+
+    @media screen and (min-width: 640px) {
+
+        display: grid;
+        max-width: 100%;
+
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 2rem 6rem 3rem;
+    
+        grid-template-areas: 
+            "header__contact header__contact"
+            "header__left header__icons"
+            "header__left header__menu";
+    
+        &__contact {
+            width: 100%;
+            grid-area: header__contact;
+            grid-column: span 2;
+            text-align: right;
+        }
+
+        &__left {
+            grid-area: header__left;
+            grid-row: span 2;
+            align-items: center;
+        }
+    }
+
+}
+
+/*
+ ***************************************
+            Main
+ ***************************************
+*/
+
+.main {
+
+    margin: 0;
+    margin-left: $spacer;
+    margin-right: $spacer;
+
+
+
+    &__slider {
+        width: 100%;
+        height: 10rem;
+        border: 1px solid black;
+    }
+
+    &__text {
+        text-align: center;
+
+        &--center,
+        &--right {
+            margin: 0;
+        }
+
+        &--center:first-child {
+            margin-top: $spacer-double;
+        }
+
+        &--right:nth-child(2) {
+            margin-top: $spacer-double;
+
+        }
+
+        &--center:not(:last-child),
+        &--right:not(:last-child) {
+            margin-bottom: $spacer;
+        }
+
+        &--center:last-child,
+        &--right:last-child {
+            margin-bottom: $spacer-double;
+        }
+
+    }
+
+    &__galerie {
+
+        display: grid;
+        max-width: 100%;
+        gap: $spacer;
+
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+        
+        grid-template-areas: 
+            "main__foto"
+            "main__foto"
+            "main__foto";
+
+        place-items: center;
+    }
+
+    &_galerie:first-child {
+        margin-top: $spacer-double;
+    }
+
+    &__story {
+
+        display: grid;
+        max-width: 100%;
+        gap: $spacer;
+    
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+        
+        grid-template-areas: 
+                "main__story-foto"
+                "main__text";
+
+        place-items: center;
+    }
+
+    &__story-foto {
+        max-width: 100%;
+        margin-top: $spacer-double;
+        align-content: center;
+        justify-content: center;
+    }
+
+
+
+}
+
+
+/*
+ ***************************************
+            Footer
+ ***************************************
+*/
+
+.footer {
+
+    display: grid;
+    min-width: 100%;
+
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 2rem;
+
+    grid-template-areas: 
+        "footer__information footer__contacts"
+        "footer__copyright footer__copyright";
+
+    &__information {
+        grid-area: footer__information;
+        background-color: $c-footer;
+        color: $c-text-light;
+        padding: $spacer $spacer;
+    }
+
+    &__contacts {
+        grid-area: footer__contacts;
+        background-color: $c-footer;
+        color: $c-text-light;
+        padding: $spacer $spacer;
+    }
+
+    &__list-item {
+        list-style: none;
+    }
+
+    &__list-link {
+        text-decoration: none;
+        color: $c-text-light;
+
+        &:hover,
+        &:focus {
+            color: $c-accent;
+        }
+    }
+
+    &__copyright {
+        background-color: $c-background-secondary;
+        color: $c-accent;
+        width: 100%;
+        font-size: 14px;
+        text-align: center;
+        padding: $spacer-half $spacer-double;
+
+        grid-area: footer__copyright;
+        grid-column: span 2;
+    }
+
+}
