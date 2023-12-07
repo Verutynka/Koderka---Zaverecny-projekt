@@ -57,11 +57,13 @@ h4 {
 .header {
   display: grid;
   gap: 1rem;
-  grid-template-columns: 1fr;
-  grid-template-rows: 2rem 6rem 3rem 3rem;
-  grid-template-areas: "header__contact" "header__left" "header__icons" "header__menu";
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 2rem 6rem 1fr;
+  grid-template-areas: "header__contact header__contact" "header__left header__left" "header__menu header__icons";
 }
 .header__contact {
+  grid-area: header__contact;
+  grid-column: span 2;
   background-color: #000000;
   color: #ffffff;
   width: 100%;
@@ -77,6 +79,8 @@ h4 {
   color: #cda792;
 }
 .header__left {
+  grid-area: header__left;
+  grid-column: span 2;
   min-width: 400px;
   margin-left: 1rem;
   margin-right: 1rem;
@@ -93,7 +97,9 @@ h4 {
   align-self: center;
 }
 .header__icons {
-  align-self: center;
+  grid-area: header__icons;
+  grid-column: 2;
+  align-self: right-top;
 }
 .header__icons-menu {
   display: flex;
@@ -115,25 +121,38 @@ h4 {
   color: #cda792;
 }
 .header__menu {
+  grid-area: header__menu;
   margin: 0;
   margin-left: 1rem;
-  margin-right: 1rem;
   align-self: center;
 }
+.header__menu-checkbox {
+  position: absolute;
+  left: -999999px;
+}
 .header__menu-list {
-  display: flex;
-  list-style: none;
-  justify-content: center;
+  display: none;
   margin: 0;
   padding: 0;
+  list-style: none;
+  background-color: #F0F0F0;
+}
+.header__menu-item {
+  border-bottom: 1px solid #cda792;
 }
 .header__menu-link {
+  display: block;
+  padding: 15px;
   text-decoration: none;
-  padding: 0.5rem 1rem;
   color: #000000;
 }
-.header__menu-link:hover, .header__menu-link:focus {
+.header__menu-link:hover {
   background-color: #cda792;
+}
+@media screen and (max-width: 639px) {
+  .header__menu-checkbox:checked ~ .header__menu-list {
+    display: block;
+  }
 }
 @media screen and (min-width: 640px) {
   .header {
@@ -170,6 +189,7 @@ h4 {
   width: 100%;
   height: 10rem;
   border: 1px solid black;
+  margin-top: 2rem;
 }
 .main__text {
   text-align: center;
