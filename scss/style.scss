@@ -504,7 +504,7 @@ h4 { font-size: 1.1rem; }
 
 /*
  ***************************************
-            Product
+            Products
  ***************************************
 */
 
@@ -563,6 +563,16 @@ h4 { font-size: 1.1rem; }
 	    text-align: center;
     }
 
+    &__name-link {
+        text-decoration: none;
+        color: $c-primary;
+
+        &:hover,
+        &:focus {
+            color: $c-accent;
+        }
+    }
+
     &__stock {
         font-size: 12px;
     }
@@ -571,4 +581,97 @@ h4 { font-size: 1.1rem; }
         margin: 0 0 $spacer 0;
     }
 
+}
+
+
+/*
+ ***************************************
+            Product detail
+ ***************************************
+*/
+
+.product-detail {
+
+    display: grid;
+    gap: $spacer;
+    margin-top: $spacer-double;
+    margin-bottom: $spacer-double;
+
+    grid-template-columns: 1fr;
+    grid-template-rows: 18rem 1fr 8rem;
+
+    grid-template-areas: 
+        "product-detail__img"
+        "product-detail__box"
+        "product-detail__buy";
+
+    &__img {
+
+        justify-self: center;
+    }
+
+    &__title {
+        text-align: center;
+    }
+
+    &__text {
+        text-align: center;
+
+        margin: 0;
+
+        &:first-of-type {
+            margin-top: $spacer-double;
+        }
+
+        &:nth-of-type(n+1),
+        &:not(:last-of-type) {
+            margin-bottom: $spacer;
+        }
+
+        &:last-of-type {
+            margin-bottom: $spacer-double;
+        }
+    }
+
+    &__buy {
+        align-self: center;
+        text-align: center;
+        justify-self: center;
+    }
+
+    @media screen and (min-width: 800px) {
+
+        grid-template-columns: 0.7fr 1fr;
+        grid-template-rows: 1fr 5rem;
+
+        grid-template-areas: 
+            "product-detail__img product-detail__box"
+            "product-detail__img product-detail__buy";
+
+    
+        &__img {
+            grid-area: product-detail__img;
+            grid-row: span 2;
+
+            align-self: center;
+            justify-content: center;
+        }
+
+        &__buy {
+            display: flex;
+            align-content: space-between;
+            justify-self: right;
+        }
+
+        &__stock {
+            align-self: center;
+            margin-right: $spacer-double;
+        }
+
+        &__price {
+            margin: 0;
+            align-self: center;
+            margin-right: $spacer-double;
+        }
+    }
 }
