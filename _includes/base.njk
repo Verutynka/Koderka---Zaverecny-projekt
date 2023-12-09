@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InkHearts Jewels {{ title }}</title>
+
+    <!-- Google Fonts: Raleway 400, Open Sans 400(i)/700(i) -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Raleway&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    
+    <header class="header">
+        <div class="header__contact">
+            <a class="header__contact-email" href="inkhearts@jewels.cz">InkHearts@Jewels.cz</a>
+            <span class="header__contact-phone">Tel. +420 123 456 789</span>
+        </div>
+
+        <div class="header__left">
+            <img class="header__logo" src="/images/logo.png" alt="Logo">
+
+            <h1 class="header__title">InkHearts jewels</h1>
+        </div>
+
+
+        <div class="header__icons">
+            <ul class="header__icons-menu">
+                <li class="header__icons-account"><a href="#" class="header__icons-link">Přihlášení</a></li>
+                <li class="header__icons-shopping-cart"><a href="#" class="header__icons-link">Košík</a></li>
+            </ul>
+        </div>
+
+        <nav class="header__menu">
+
+            <input type="checkbox" class="header__menu-checkbox" id="menu-checkbox">
+            <label for="menu-checkbox" class="header__menu-togler">☰</label>
+
+            <ul class="header__menu-list">
+                <li class="header__menu-item"><a href="/" class="header__menu-link">Úvod</a></li>
+                <li class="header__menu-item"><a href="/earrings/" class="header__menu-link">Náušnice</a></li>
+                <li class="header__menu-item"><a href="#" class="header__menu-link">Prsteny</a></li>
+                <li class="header__menu-item"><a href="#" class="header__menu-link">Náhrdelníky</a></li>
+                <li class="header__menu-item"><a href="#" class="header__menu-link">Náramky</a></li>
+            </ul>
+
+        </nav>
+
+    </header>
+
+    <main class="main">
+
+        {{ content | safe }}
+
+    </main>
+
+    <footer class="footer">
+        <div class="footer__information">
+
+            <h4>Informace</h4>
+
+            <ul class="footer__list">
+                <li class="footer__list-item"><a href="#" class="footer__list-link">Obchodní podmínky</a></li>
+                <li class="footer__list-item"><a href="#" class="footer__list-link">Ochrana osobních údajů</a></li>
+                <li class="footer__list-item"><a href="#" class="footer__list-link">Reklamace</a></li>
+                <li class="footer__list-item"><a href="#" class="footer__list-link">Možnosti dopravy</a></li>
+            </ul>
+        </div>
+
+        <div class="footer__contacts">
+
+            <h4>Kontakt</h4>
+
+            <ul class="footer__list">
+                <li class="footer__list-item">obchod@obchod.cz</li>
+                <li class="footer__list-item">+420 123 456 789</li>
+                <li class="footer__list-item"><a href="#" class="footer__list-link">Facebook</a></li>
+                <li class="footer__list-item"><a href="#" class="footer__list-link">Instagram</a></li>
+                <li class="footer__list-item"><a href="#" class="footer__list-link">Pinterest</a></li>
+            </ul>
+        </div>
+
+        <div class="footer__copyright">
+            2023 Verutynka Staň se koderkou Czechitas
+        </div>
+
+    </footer>
+
+
+</body>
+</html>

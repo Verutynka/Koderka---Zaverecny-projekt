@@ -27,17 +27,27 @@ body {
     background-color: $c-background-primary;
 }
 
-h1, h2, h4 {
+h1, h3, h4, h5 {
     font-family: $font-special;
     font-weight: normal;
     margin: 0;
 }
 
+h2 {
+    font-family: $font-special;
+    font-weight: bold;
+}
+
+h3 {
+    margin-bottom: $spacer-double;
+}
+
 h1 { font-size: 2rem; }
-h2 { font-size: 1.5rem; }
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.3rem;}
 h4 { font-size: 1.1rem; }
 
-:is(h1, h2, h4):first-child {
+:is(h4):first-child {
     margin-top: 0;
 }
 
@@ -49,11 +59,17 @@ h4 { font-size: 1.1rem; }
 */
 
 .button {
-    background-color: $c-accent;
+    display: inline-block;
+    background-color: $c-background-secondary;
     font-size: 1rem;
     padding: $spacer-quarter $spacer-half;
-    border: 1px solid black;
+    border-radius: 3px;
     cursor: pointer;
+
+    &:hover,
+    &:focus {
+        background-color: $c-accent;
+    }
 }
 
 
@@ -180,7 +196,7 @@ h4 { font-size: 1.1rem; }
         background-color: $c-background-secondary;
     }
 
-    &__menu-item {
+    &__menu-item:not(:last-child) {
         border-bottom: 1px solid $c-accent;
     }
 
@@ -256,7 +272,7 @@ h4 { font-size: 1.1rem; }
             background-color: $c-background-primary;
         }
 
-        &__menu-item {
+        &__menu-item:not(:last-child) {
             border-bottom: 0px solid $c-accent;
         }
 
@@ -302,15 +318,12 @@ h4 { font-size: 1.1rem; }
             align-self: center;
             justify-self: end;
         }
-
-        
     }
-
 }
 
 /*
  ***************************************
-            Main
+            Main - Úvod
  ***************************************
 */
 
@@ -354,7 +367,6 @@ h4 { font-size: 1.1rem; }
         &--center:last-child {
             margin-bottom: $spacer-double;
         }
-
     }
 
     &__galerie {
@@ -379,7 +391,6 @@ h4 { font-size: 1.1rem; }
     }
 
     &__story {
-
         display: grid;
         max-width: 100%;
         gap: $spacer;
@@ -395,6 +406,10 @@ h4 { font-size: 1.1rem; }
 
         margin-top: $spacer-double;
         margin-bottom: $spacer-double;
+    }
+
+    &__text-title {
+        margin-top: $spacer;
     }
 
     &__story-foto {
@@ -423,7 +438,6 @@ h4 { font-size: 1.1rem; }
             grid-template-areas: 
                 "main__foto main__foto main__foto";
         }
-
     }
 
 }
@@ -485,6 +499,76 @@ h4 { font-size: 1.1rem; }
 
         grid-area: footer__copyright;
         grid-column: span 2;
+    }
+}
+
+/*
+ ***************************************
+            Product
+ ***************************************
+*/
+
+.products {
+
+    margin-bottom: $spacer;
+
+    &__title {
+        margin: $spacer-double 0;
+
+        text-align: center;
+        align-self: center;
+    }
+
+    &__gallery {
+
+        display: grid;
+        gap: $spacer;
+
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+
+    &__box {
+        position: relative;
+        min-width: 300px;
+        height: 470px;
+        background-color: $c-background-primary;
+        border: 1px solid $c-background-secondary;
+        border-radius: 5px;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        transition: all 0.4s;
+    }
+
+    &__box:hover {
+        box-shadow: 0 6px 15px rgba(72, 52, 212, 0.15);
+        transform: translateY(-3px);
+    }
+        
+    &__foto {
+        height: 300px;
+        position: relative;
+        padding: 10px;
+    }
+
+    &__foto-img {
+        display: block;
+        width: 280px;
+        margin: 0 auto;
+        border: 0.5 solid $c-accent;
+        border-radius: 5px;
+        box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+    }
+
+    &__details {
+        padding: $spacer;
+	    text-align: center;
+    }
+
+    &__stock {
+        font-size: 12px;
+    }
+
+    &__price {
+        margin: 0 0 $spacer 0;
     }
 
 }
