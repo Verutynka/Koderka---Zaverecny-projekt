@@ -7,8 +7,9 @@ $c-background-primary: #ffffff;
 $c-background-secondary: #F0F0F0;
 $c-primary: #000000;
 $c-accent: #cda792;
-$c-title-light: #ffffff;
+$c-text-disabled: #b3b1b1;
 $c-text-light: #ffffff;
+$c-border: #d1c7c2;
 $c-header: #000000;
 $c-footer: #000000;
 
@@ -51,6 +52,17 @@ h4 { font-size: 1.1rem; }
     margin-top: 0;
 }
 
+.back-link {
+    text-decoration: none;
+    color: $c-text-disabled;
+    font-size: 0.8rem;
+
+    &:hover,
+    &:focus {
+        color: $c-accent;
+    }
+}
+
 
 /*
  ***************************************
@@ -72,6 +84,27 @@ h4 { font-size: 1.1rem; }
     }
 }
 
+.button-link {
+    text-decoration: none;
+    color: $c-primary;
+}
+
+.button-big {
+    width: 150px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $c-background-secondary;
+    font-size: 1rem;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.button-big:hover,
+.button-big:focus {
+    background-color: $c-accent;
+}
 
 /*
  ***************************************
@@ -185,7 +218,6 @@ h4 { font-size: 1.1rem; }
     &__menu-checkbox {
         position: absolute;
         left: -999999px;
-        //display: none;
     }
 
     &__menu-list {
@@ -461,6 +493,12 @@ h4 { font-size: 1.1rem; }
         "footer__information footer__contacts"
         "footer__copyright footer__copyright";
 
+    font-size: 0.6rem;
+
+    &__title {
+        font-size: 0.8rem;
+    }
+
     &__information {
         grid-area: footer__information;
         background-color: $c-footer;
@@ -499,6 +537,16 @@ h4 { font-size: 1.1rem; }
 
         grid-area: footer__copyright;
         grid-column: span 2;
+    }
+
+    @media screen and (min-width: 800px) {
+
+        font-size: 0.8rem;
+
+        &__title {
+            font-size: 1rem;
+        }
+    
     }
 }
 
@@ -673,5 +721,229 @@ h4 { font-size: 1.1rem; }
             align-self: center;
             margin-right: $spacer-double;
         }
+    }
+}
+
+
+/*
+ ***************************************
+            Cart
+ ***************************************
+*/
+
+.cart-overview {
+
+    display: grid;
+    gap: $spacer;
+
+    grid-template-columns: 1fr;
+    grid-template-rows: 3rem 6rem 1fr 5rem;
+
+    & p {
+        margin: 0;
+    }
+
+    &__back-top {
+        margin-top: $spacer;
+    }
+
+    &__nav {
+        align-self: center;
+        justify-self: center;
+        text-align: center;
+    }
+
+    &__nav-menu {
+        display: inline-block;
+        list-style: none;
+        font-size: 1.1rem;
+        padding: 0;
+    }
+
+    &__nav-list {
+
+        list-style: none;
+
+        &--one {
+            color: $c-primary;
+        }
+
+        &--two {
+            color: $c-text-disabled;
+        }
+
+        &--three {
+            color: $c-text-disabled;
+        }
+    }
+
+    &__table {
+        width: 100%;
+        border-collapse: collapse;
+        border-bottom: 0.5px solid $c-border;
+    }
+
+    &__table-item {
+        display: flex;
+        flex-wrap: wrap;
+        margin: $spacer;
+    }
+
+    &__table-img {
+        width: 30%;
+        box-sizing: border-box;
+        text-align: center;
+    }
+
+    &__img {
+        max-width: none;
+        width: 80px;
+    }
+
+    &__table-name {
+        width: 70%;
+        box-sizing: border-box;
+        padding: $spacer-quarter;
+        text-align: left;
+    }
+
+    &__table-stock {
+        width: 50%;
+        box-sizing: border-box;
+        padding: $spacer-quarter;
+        text-align: left;
+        font-size: 0.8rem;
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__table-number {
+        width: 50%;
+        box-sizing: border-box;
+        padding: $spacer-quarter;
+        text-align: right;
+        font-size: 0.8rem;
+    }
+
+    &__table-price {
+        width: 50%;
+        box-sizing: border-box;
+        padding: $spacer-quarter;
+        text-align: left;
+        font-size: 0.8rem;
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__price {
+        font-weight: normal;
+    }
+
+    &__table-summ {
+        width: 50%;
+        box-sizing: border-box;
+        padding: $spacer-quarter;
+        text-align: right;
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__table-order-price {
+        width: 50%;
+        box-sizing: border-box;
+        padding: $spacer-quarter;
+        text-align: left;
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__price-primary {
+        font-size: 1.2rem;
+    }
+
+    &__price-secondary {
+        font-size: 0.8rem;
+    }
+
+    &__summ-primary {
+        font-size: 1.2rem;
+    }
+
+    &__summ-secondary {
+        font-size: 0.8rem;
+    }
+
+    &__table-order-summ {
+        width: 50%;
+        box-sizing: border-box;
+        padding: $spacer-quarter;
+        text-align: right;
+        display: flex;
+        flex-direction: column;
+    }
+
+
+    @media screen and (min-width: 800px) {
+
+        grid-template-rows: 2.5rem 4rem 1fr 5rem;
+
+        &__nav-menu {
+            display: flex;
+            padding: 0 $spacer-double;
+        }
+    
+        &__nav-list {
+
+            &--two,
+            &--three {
+                margin-left: $spacer-double;
+            }
+        }
+
+        &__table-img {
+            width: 10%;
+        }
+  
+        &__table-name {
+            width: 25%;
+            padding-top: $spacer-double;
+        }
+    
+        &__table-stock {
+            width: 15%;
+            padding-top: $spacer-double;
+        }
+    
+        &__table-number {
+            width: 10%;
+            padding-top: $spacer-double;
+            text-align: center;
+        }
+    
+        &__table-price {
+            width: 20%;
+            padding-top: $spacer-double;
+        }
+    
+        &__table-summ {
+            width: 20%;
+            padding-top: $spacer-double;
+        }
+    
+    }
+
+    &__next-step {
+        display: flex;
+        padding: $spacer;
+        justify-content: right;
+    }
+
+    &__back-bottom {
+        align-self: center;
+        margin-right: $spacer-double;
+    }
+
+    .button-big {
+        align-self: center;
     }
 }
