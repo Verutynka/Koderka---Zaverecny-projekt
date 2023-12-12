@@ -1,0 +1,51 @@
+@use 'variables';
+
+html {
+    box-sizing: border-box;
+}
+
+*, ::before, ::after {
+    box-sizing: inherit;
+}
+
+
+body {
+    margin: 0;
+    font-family: variables.$font-default;
+    background-color: variables.$c-background-primary;
+}
+
+h1, h3, h4, h5 {
+    font-family: variables.$font-special;
+    font-weight: normal;
+    margin: 0;
+}
+
+h2 {
+    font-family: variables.$font-special;
+    font-weight: bold;
+}
+
+h3 {
+    margin-bottom: variables.$spacer-double;
+}
+
+h1 { font-size: 2rem; }
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.3rem;}
+h4 { font-size: 1.1rem; }
+
+:is(h4):first-child {
+    margin-top: 0;
+}
+
+.back-link {
+    text-decoration: none;
+    color: variables.$c-text-disabled;
+    font-size: 0.8rem;
+
+    &:hover,
+    &:focus {
+        color: variables.$c-accent;
+    }
+}

@@ -1,0 +1,93 @@
+@use 'variables';
+
+/*
+ ***************************************
+            Product detail
+ ***************************************
+*/
+
+.product-detail {
+
+    display: grid;
+    gap: variables.$spacer;
+    margin-top: variables.$spacer-double;
+    margin-bottom: variables.$spacer-double;
+
+    grid-template-columns: 1fr;
+    grid-template-rows: 18rem 1fr 8rem;
+
+    grid-template-areas: 
+        "product-detail__img"
+        "product-detail__box"
+        "product-detail__buy";
+
+    &__img {
+
+        justify-self: center;
+    }
+
+    &__title {
+        text-align: center;
+    }
+
+    &__text {
+        text-align: center;
+
+        margin: 0;
+
+        &:first-of-type {
+            margin-top: variables.$spacer-double;
+        }
+
+        &:nth-of-type(n+1),
+        &:not(:last-of-type) {
+            margin-bottom: variables.$spacer;
+        }
+
+        &:last-of-type {
+            margin-bottom: variables.$spacer-double;
+        }
+    }
+
+    &__buy {
+        align-self: center;
+        text-align: center;
+        justify-self: center;
+    }
+
+    @media screen and (min-width: 800px) {
+
+        grid-template-columns: 0.7fr 1fr;
+        grid-template-rows: 1fr 5rem;
+
+        grid-template-areas: 
+            "product-detail__img product-detail__box"
+            "product-detail__img product-detail__buy";
+
+    
+        &__img {
+            grid-area: product-detail__img;
+            grid-row: span 2;
+
+            align-self: center;
+            justify-content: center;
+        }
+
+        &__buy {
+            display: flex;
+            align-content: space-between;
+            justify-self: right;
+        }
+
+        &__stock {
+            align-self: center;
+            margin-right: variables.$spacer-double;
+        }
+
+        &__price {
+            margin: 0;
+            align-self: center;
+            margin-right: variables.$spacer-double;
+        }
+    }
+}

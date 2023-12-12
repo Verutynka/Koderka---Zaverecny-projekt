@@ -1,5 +1,4 @@
 @charset "UTF-8";
-/* intuitivnější box-sizing pro všechny prvky na stránce */
 html {
   box-sizing: border-box;
 }

@@ -1,0 +1,248 @@
+@use 'variables';
+
+/*
+ ***************************************
+            Header
+ ***************************************
+*/
+
+.header{
+
+    display: grid;
+    gap: variables.$spacer;
+
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 2rem 6rem 1fr;
+
+    grid-template-areas: 
+        "header__contact header__contact"
+        "header__left header__left"
+        "header__menu header__icons";
+
+    &__contact {
+        grid-area: header__contact;
+        grid-column: span 2;
+
+        background-color: variables.$c-header;
+        color: variables.$c-text-light;
+        width: 100%;
+        font-size: 14px;
+        text-align: center;
+        padding: variables.$spacer-half variables.$spacer-double;
+    }
+
+    &__contact-email {
+        margin-right: variables.$spacer;
+        color: variables.$c-text-light;
+
+        &:hover,
+        &:focus {
+            color: variables.$c-accent;
+        }
+    }
+
+    &__left {
+        grid-area: header__left;
+        grid-column: span 2;
+
+        min-width: 400px;
+        margin-left: variables.$spacer;
+        margin-right: variables.$spacer;
+        height: 100%;
+        display: flex;
+        justify-content: left;
+        place-content: center;
+    }
+
+    &__logo {
+        height: 100px;
+    }
+
+    &__title {
+        margin-left: variables.$spacer-double;
+        align-self: center;
+    }
+
+    &__icons {
+        grid-area: header__icons;
+        grid-column: 2;
+
+        align-self: right-top;
+    }
+
+    &__icons-menu {
+        display: flex;
+        list-style: none;
+        justify-content: right;
+        margin: 0;
+        margin-left: variables.$spacer;
+        margin-right: variables.$spacer;
+        padding: 0;
+    }
+
+    &__icons-account {
+        margin-right: variables.$spacer;
+    }
+
+    &__icons-link {
+        text-decoration: none;
+        color: variables.$c-primary;
+
+        &:hover,
+        &:focus {
+            color: variables.$c-accent;
+        }
+    }
+
+    &__menu {
+        grid-area: header__menu;
+        margin: 0;
+        margin-left: variables.$spacer;
+        align-self: center;
+    }
+
+    &__menu-togler {
+        cursor: pointer;
+
+        &:hover {
+            color: variables.$c-accent;
+        }
+    }
+
+    &__menu-checkbox {
+        position: absolute;
+        left: -999999px;
+    }
+
+    &__menu-list {
+        display: none;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        background-color: variables.$c-background-secondary;
+    }
+
+    &__menu-item:not(:last-child) {
+        border-bottom: 1px solid variables.$c-accent;
+    }
+
+    &__menu-link {
+        display: block;
+        padding: 15px;
+        text-decoration: none;
+        color: variables.$c-primary;
+        cursor: pointer;
+    }
+
+    &__menu-link:hover {
+        background-color: variables.$c-accent;
+    }
+
+    @media screen and (max-width: 799px) {
+
+        &__menu-checkbox:checked ~ &__menu-list {
+            display: block;
+        }
+    }
+
+    @media screen and (min-width: 800px) {
+
+        display: grid;
+        max-width: 100%;
+
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 2rem 6rem 3rem;
+    
+        grid-template-areas: 
+            "header__contact header__contact"
+            "header__left header__icons"
+            "header__menu header__menu";
+    
+        &__contact {
+            width: 100%;
+            grid-area: header__contact;
+            grid-column: span 2;
+            text-align: right;
+        }
+
+        &__left {
+            grid-area: header__left;
+            align-self: center;
+            justify-self: start;
+        }
+
+        &__icons {
+            grid-area: header__icons;
+            margin-right: variables.$spacer;
+            align-self: end;
+            justify-self: end;
+        }
+
+        &__menu-togler {
+            display: none;
+        }
+
+        &__menu {
+            margin: 0;
+            margin-left: variables.$spacer;
+            margin-right: variables.$spacer;
+            align-self: center;
+        }
+
+        &__menu-list {
+            display: flex;
+            list-style: none;
+            justify-content: center;
+            margin: 0;
+            padding: 0;
+            background-color: variables.$c-background-primary;
+        }
+
+        &__menu-item:not(:last-child) {
+            border-bottom: 0px solid variables.$c-accent;
+        }
+
+        &__menu-item:not(:last-child) {
+            border-right: 0.5px solid variables.$c-accent;
+        }
+
+        &__menu-link {
+            text-decoration: none;
+            padding: variables.$spacer-half variables.$spacer;
+            color: variables.$c-primary;
+
+            &:hover,
+            &:focus {
+                background-color: variables.$c-accent;
+            }
+        }
+    }
+
+    @media screen and (min-width: 1100px) {
+
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 2rem 3rem 3rem;
+    
+        grid-template-areas: 
+            "header__contact header__contact"
+            "header__left header__icons"
+            "header__left header__menu";
+
+        &__left {
+            grid-area: header__left;
+            grid-row: span 2;
+            justify-self: start;
+        }
+
+        &__logo {
+            align-self: center;
+        }
+
+        &__menu {
+            margin: 0;
+            margin-right: variables.$spacer;
+            align-self: center;
+            justify-self: end;
+        }
+    }
+}

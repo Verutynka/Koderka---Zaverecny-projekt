@@ -1,0 +1,224 @@
+@use 'variables';
+
+/*
+ ***************************************
+            Cart
+ ***************************************
+*/
+
+.cart-overview {
+
+    display: grid;
+    gap: variables.$spacer;
+
+    grid-template-columns: 1fr;
+    grid-template-rows: 3rem 6rem 1fr 5rem;
+
+    & p {
+        margin: 0;
+    }
+
+    &__back-top {
+        margin-top: variables.$spacer;
+    }
+
+    &__nav {
+        align-self: center;
+        justify-self: center;
+        text-align: center;
+    }
+
+    &__nav-menu {
+        display: inline-block;
+        list-style: none;
+        font-size: 1.1rem;
+        padding: 0;
+    }
+
+    &__nav-list {
+
+        list-style: none;
+
+        &--one {
+            color: variables.$c-primary;
+        }
+
+        &--two {
+            color: variables.$c-text-disabled;
+        }
+
+        &--three {
+            color: variables.$c-text-disabled;
+        }
+    }
+
+    &__table {
+        width: 100%;
+        border-collapse: collapse;
+        border-bottom: 0.5px solid variables.$c-border;
+    }
+
+    &__table-item {
+        display: flex;
+        flex-wrap: wrap;
+        margin: variables.$spacer;
+    }
+
+    &__table-img {
+        width: 30%;
+        box-sizing: border-box;
+        text-align: center;
+    }
+
+    &__img {
+        max-width: none;
+        width: 80px;
+    }
+
+    &__table-name {
+        width: 70%;
+        box-sizing: border-box;
+        padding: variables.$spacer-quarter;
+        text-align: left;
+    }
+
+    &__table-stock {
+        width: 50%;
+        box-sizing: border-box;
+        padding: variables.$spacer-quarter;
+        text-align: left;
+        font-size: 0.8rem;
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__table-number {
+        width: 50%;
+        box-sizing: border-box;
+        padding: variables.$spacer-quarter;
+        text-align: right;
+        font-size: 0.8rem;
+    }
+
+    &__table-price {
+        width: 50%;
+        box-sizing: border-box;
+        padding: variables.$spacer-quarter;
+        text-align: left;
+        font-size: 0.8rem;
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__price {
+        font-weight: normal;
+    }
+
+    &__table-summ {
+        width: 50%;
+        box-sizing: border-box;
+        padding: variables.$spacer-quarter;
+        text-align: right;
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__table-order-price {
+        width: 50%;
+        box-sizing: border-box;
+        padding: variables.$spacer-quarter;
+        text-align: left;
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__price-primary {
+        font-size: 1.2rem;
+    }
+
+    &__price-secondary {
+        font-size: 0.8rem;
+    }
+
+    &__summ-primary {
+        font-size: 1.2rem;
+    }
+
+    &__summ-secondary {
+        font-size: 0.8rem;
+    }
+
+    &__table-order-summ {
+        width: 50%;
+        box-sizing: border-box;
+        padding: variables.$spacer-quarter;
+        text-align: right;
+        display: flex;
+        flex-direction: column;
+    }
+
+
+    @media screen and (min-width: 800px) {
+
+        grid-template-rows: 2.5rem 4rem 1fr 5rem;
+
+        &__nav-menu {
+            display: flex;
+            padding: 0 variables.$spacer-double;
+        }
+    
+        &__nav-list {
+
+            &--two,
+            &--three {
+                margin-left: variables.$spacer-double;
+            }
+        }
+
+        &__table-img {
+            width: 10%;
+        }
+  
+        &__table-name {
+            width: 25%;
+            padding-top: variables.$spacer-double;
+        }
+    
+        &__table-stock {
+            width: 15%;
+            padding-top: variables.$spacer-double;
+        }
+    
+        &__table-number {
+            width: 10%;
+            padding-top: variables.$spacer-double;
+            text-align: center;
+        }
+    
+        &__table-price {
+            width: 20%;
+            padding-top: variables.$spacer-double;
+        }
+    
+        &__table-summ {
+            width: 20%;
+            padding-top: variables.$spacer-double;
+        }
+    
+    }
+
+    &__next-step {
+        display: flex;
+        padding: variables.$spacer;
+        justify-content: right;
+    }
+
+    &__back-bottom {
+        align-self: center;
+        margin-right: variables.$spacer-double;
+    }
+
+    .button-big {
+        align-self: center;
+    }
+}

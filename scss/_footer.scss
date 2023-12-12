@@ -1,0 +1,76 @@
+@use 'variables';
+
+/*
+ ***************************************
+            Footer
+ ***************************************
+*/
+
+.footer {
+
+    display: grid;
+    min-width: 100%;
+
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 2rem;
+
+    grid-template-areas: 
+        "footer__information footer__contacts"
+        "footer__copyright footer__copyright";
+
+    font-size: 0.6rem;
+
+    &__title {
+        font-size: 0.8rem;
+    }
+
+    &__information {
+        grid-area: footer__information;
+        background-color: variables.$c-footer;
+        color: variables.$c-text-light;
+        padding: variables.$spacer variables.$spacer;
+    }
+
+    &__contacts {
+        grid-area: footer__contacts;
+        background-color: variables.$c-footer;
+        color: variables.$c-text-light;
+        padding: variables.$spacer variables.$spacer;
+    }
+
+    &__list-item {
+        list-style: none;
+    }
+
+    &__list-link {
+        text-decoration: none;
+        color: variables.$c-text-light;
+
+        &:hover,
+        &:focus {
+            color: variables.$c-accent;
+        }
+    }
+
+    &__copyright {
+        background-color: variables.$c-background-secondary;
+        color: variables.$c-accent;
+        width: 100%;
+        font-size: 14px;
+        text-align: center;
+        padding: variables.$spacer-half variables.$spacer-double;
+
+        grid-area: footer__copyright;
+        grid-column: span 2;
+    }
+
+    @media screen and (min-width: 800px) {
+
+        font-size: 0.8rem;
+
+        &__title {
+            font-size: 1rem;
+        }
+    
+    }
+}

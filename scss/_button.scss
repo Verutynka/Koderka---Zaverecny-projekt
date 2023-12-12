@@ -1,0 +1,43 @@
+@use 'variables';
+
+/*
+ ***************************************
+            Tlačítko
+ ***************************************
+*/
+
+.button {
+    display: inline-block;
+    background-color: variables.$c-background-secondary;
+    font-size: 1rem;
+    padding: variables.$spacer-quarter variables.$spacer-half;
+    border-radius: 3px;
+    cursor: pointer;
+
+    &:hover,
+    &:focus {
+        background-color: variables.$c-accent;
+    }
+}
+
+.button-link {
+    text-decoration: none;
+    color: variables.$c-primary;
+}
+
+.button-big {
+    width: 150px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: variables.$c-background-secondary;
+    font-size: 1rem;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.button-big:hover,
+.button-big:focus {
+    background-color: variables.$c-accent;
+}

@@ -1,0 +1,122 @@
+@use 'variables';
+
+/*
+ ***************************************
+            Main - Úvod
+ ***************************************
+*/
+
+.main {
+
+    margin: 0;
+    margin-left: variables.$spacer;
+    margin-right: variables.$spacer;
+
+
+
+    &__slider {
+        width: 100%;
+        height: 10rem;
+        border: 1px solid black;
+        margin-top: variables.$spacer-double;
+    }
+
+    &__text {
+        text-align: center;
+
+        &--center,
+        &--right {
+            margin: 0;
+        }
+
+        &--center:first-child {
+            margin-top: variables.$spacer-double;
+        }
+
+        &--right:nth-child(2) {
+            margin-top: variables.$spacer-double;
+
+        }
+
+        &--center:not(:last-child),
+        &--right:not(:last-child) {
+            margin-bottom: variables.$spacer;
+        }
+
+        &--center:last-child {
+            margin-bottom: variables.$spacer-double;
+        }
+    }
+
+    &__galerie {
+
+        display: grid;
+        max-width: 100%;
+        gap: variables.$spacer;
+
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+        
+        grid-template-areas: 
+            "main__foto"
+            "main__foto"
+            "main__foto";
+
+        place-items: center;
+    }
+
+    &_galerie:first-child {
+        margin-top: variables.$spacer-double;
+    }
+
+    &__story {
+        display: grid;
+        max-width: 100%;
+        gap: variables.$spacer;
+    
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+        
+        grid-template-areas: 
+                "main__story-foto"
+                "main__text";
+
+        place-items: center;
+
+        margin-top: variables.$spacer-double;
+        margin-bottom: variables.$spacer-double;
+    }
+
+    &__text-title {
+        margin-top: variables.$spacer;
+    }
+
+    &__story-foto {
+        max-width: 100%;
+        margin-top: variables.$spacer-double;
+        align-content: center;
+        justify-content: center;
+    }
+
+    @media screen and (min-width: 800px) {
+
+        &__galerie {
+
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: 1fr;
+        
+            grid-template-areas: 
+                "main__foto main__foto main__foto";
+        }
+
+        &__story {
+
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr;
+        
+            grid-template-areas: 
+                "main__foto main__foto main__foto";
+        }
+    }
+
+}
