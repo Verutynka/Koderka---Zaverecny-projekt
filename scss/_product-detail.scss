@@ -14,7 +14,7 @@
     margin-bottom: variables.$spacer-double;
 
     grid-template-columns: 1fr;
-    grid-template-rows: 18rem 1fr 8rem;
+    grid-template-rows: 21rem 1fr 8rem;
 
     grid-template-areas: 
         "product-detail__img"
@@ -22,8 +22,13 @@
         "product-detail__buy";
 
     &__img {
-
         justify-self: center;
+        max-width: 100%;
+
+        display: block;
+        margin: 0 auto;
+        border: 0.5 solid variables.$c-accent;
+        border-radius: 5px;
     }
 
     &__title {
@@ -66,6 +71,7 @@
 
     
         &__img {
+            max-width: 450px;
             grid-area: product-detail__img;
             grid-row: span 2;
 

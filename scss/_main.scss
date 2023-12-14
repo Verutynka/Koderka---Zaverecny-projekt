@@ -65,8 +65,18 @@
         place-items: center;
     }
 
-    &_galerie:first-child {
+    &__galerie:first-child {
         margin-top: variables.$spacer-double;
+    }
+
+    &__foto {
+        grid-area: "main__foto";
+        max-width: 100%;
+
+        display: block;
+        margin: 0 auto;
+        border: 0.5 solid variables.$c-accent;
+        border-radius: 5px;
     }
 
     &__story {
@@ -75,7 +85,7 @@
         gap: variables.$spacer;
     
         grid-template-columns: 1fr;
-        grid-template-rows: 1fr 1fr;
+        grid-template-rows: 0.8fr 0.6fr;
         
         grid-template-areas: 
                 "main__story-foto"
@@ -92,10 +102,13 @@
     }
 
     &__story-foto {
-        max-width: 100%;
         margin-top: variables.$spacer-double;
         align-content: center;
         justify-content: center;
+    }
+
+    &__foto-big {
+        max-width: 100%;
     }
 
     @media screen and (min-width: 800px) {
