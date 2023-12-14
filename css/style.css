@@ -128,7 +128,7 @@ h4 {
 .header__left {
   grid-area: header__left;
   grid-column: span 2;
-  min-width: 400px;
+  min-width: 350px;
   margin-left: 1rem;
   margin-right: 1rem;
   height: 100%;
@@ -137,10 +137,10 @@ h4 {
   place-content: center;
 }
 .header__logo {
-  height: 100px;
+  height: 80px;
 }
 .header__title {
-  margin-left: 2rem;
+  margin-left: 1rem;
   align-self: center;
 }
 .header__icons {
@@ -375,7 +375,7 @@ h4 {
   display: grid;
   min-width: 100%;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 2rem;
+  grid-template-rows: 1fr 1.1rem;
   grid-template-areas: "footer__information footer__contacts" "footer__copyright footer__copyright";
   font-size: 0.6rem;
 }
@@ -408,17 +408,18 @@ h4 {
   background-color: #F0F0F0;
   color: #cda792;
   width: 100%;
-  font-size: 14px;
+  margin: 0;
   text-align: center;
-  padding: 0.5rem 2rem;
+  align-self: center;
   grid-area: footer__copyright;
   grid-column: span 2;
 }
 @media screen and (min-width: 800px) {
   .footer {
+    grid-template-rows: 1fr 2rem;
     font-size: 0.8rem;
   }
-  .footer__title {
+  .footer__title, .footer_copyright {
     font-size: 1rem;
   }
 }

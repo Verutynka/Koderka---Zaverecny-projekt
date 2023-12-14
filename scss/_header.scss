@@ -45,7 +45,7 @@
         grid-area: header__left;
         grid-column: span 2;
 
-        min-width: 400px;
+        min-width: 350px;
         margin-left: variables.$spacer;
         margin-right: variables.$spacer;
         height: 100%;
@@ -55,11 +55,11 @@
     }
 
     &__logo {
-        height: 100px;
+        height: 80px;
     }
 
     &__title {
-        margin-left: variables.$spacer-double;
+        margin-left: variables.$spacer;
         align-self: center;
     }
 

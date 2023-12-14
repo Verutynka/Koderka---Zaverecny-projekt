@@ -12,7 +12,7 @@
     min-width: 100%;
 
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 2rem;
+    grid-template-rows: 1fr 1.1rem;
 
     grid-template-areas: 
         "footer__information footer__contacts"
@@ -56,9 +56,9 @@
         background-color: variables.$c-background-secondary;
         color: variables.$c-accent;
         width: 100%;
-        font-size: 14px;
+        margin: 0;
         text-align: center;
-        padding: variables.$spacer-half variables.$spacer-double;
+        align-self: center;
 
         grid-area: footer__copyright;
         grid-column: span 2;
@@ -66,11 +66,14 @@
 
     @media screen and (min-width: 800px) {
 
+        grid-template-rows: 1fr 2rem;
+
         font-size: 0.8rem;
 
-        &__title {
+        &__title,
+        &_copyright {
             font-size: 1rem;
         }
-    
+
     }
 }
