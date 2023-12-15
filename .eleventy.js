@@ -8,6 +8,10 @@ module.exports = function(eleventyConfig) {
 	// Zkopírovat css/ to _site/css/
 	eleventyConfig.addPassthroughCopy("css");
 
+  // Zkopírovat služku /js na stejné umístění do _site
+  // Zkopírovat js/ do _site/js/
+  eleventyConfig.addPassthroughCopy("js");
+
   return {
     // možné formáty šablon
     templateFormats: ["njk", "html", "md", "liquid"],
