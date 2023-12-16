@@ -9,10 +9,12 @@
 .main {
 
     margin: 0;
+    margin-top: variables.$spacer-double;
     margin-left: variables.$spacer;
     margin-right: variables.$spacer;
 
     .glide {
+
         &__slide-img {
             max-width: 100%;
         }

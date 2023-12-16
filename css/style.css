@@ -294,6 +294,7 @@ h4 {
 */
 .main {
   margin: 0;
+  margin-top: 2rem;
   margin-left: 1rem;
   margin-right: 1rem;
 }
