@@ -973,4 +973,22 @@ h4 {
 }
 .cart-pay .cart-payment__label {
   margin-left: 1rem;
+}
+
+.cart-thanks {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+.cart-thanks__box {
+  display: flex;
+  height: 15rem;
+}
+.cart-thanks__text {
+  display: flex;
+  flex-grow: 1;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
 }/*# sourceMappingURL=style.css.map */

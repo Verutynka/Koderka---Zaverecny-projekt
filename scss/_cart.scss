@@ -516,3 +516,23 @@
     }
 
 }
+
+.cart-thanks {
+
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+
+    &__box {
+        display: flex;
+        height: 15rem;
+    }
+    &__text {
+        display: flex;
+        flex-grow: 1;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        margin-top: variables.$spacer-double;
+    }
+}
