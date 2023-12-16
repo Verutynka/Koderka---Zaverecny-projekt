@@ -8,69 +8,40 @@ title: Úvod
     <div class="glide__track" data-glide-el="track">
         <ul class="glide__slides">
             <li class="glide__slide">
-                <img src="/images/Slider/Slider_mobile_1.png"
-                srcset="/images/Slider/Slider_mobile_1.png 750w, /images/Slider/Slider_pc_1.png 1200w"
-                sizes="(max-width: 1099px) 750px, 1200px" alt="Náramek">
+                <img class="glide__slide-img" src="/images/Slider/Slider_mobile_1.png" alt="Foto 1">
             </li>
             <li class="glide__slide">
-                <img src="/images/Slider/Slider_mobile_2.png"
-                srcset="/images/Slider/Slider_mobile_2.png 750w, /images/Slider/Slider_pc_2.png 1200w"
-                sizes="(max-width: 1099px) 750px, 1200px" alt="Náramek">
+                <img class="glide__slide-img" src="/images/Slider/Slider_mobile_2.png" alt="Foto 2">
             </li>
             <li class="glide__slide">
-                <img src="/images/Slider/Slider_mobile_3.png"
-                srcset="/images/Slider/Slider_mobile_3.png 750w, /images/Slider/Slider_pc_3.png 1200w"
-                sizes="(max-width: 1099px) 750px, 1200px" alt="Náramek">
+                <img class="glide__slide-img" src="/images/Slider/Slider_mobile_3.png" alt="Foto 3">
             </li>
             <li class="glide__slide">
-                <img src="/images/Slider/Slider_mobile_3.png"
-                srcset="/images/Slider/Slider_mobile_3.png 750w, /images/Slider/Slider_pc_3.png 1200w"
-                sizes="(max-width: 1099px) 750px, 1200px" alt="Náramek">
+                <img class="glide__slide-img" src="/images/Slider/Slider_mobile_4.png" alt="Foto 4">
             </li>
             <li class="glide__slide">
-                <img src="/images/Slider/Slider_mobile_4.png"
-                srcset="/images/Slider/Slider_mobile_4.png 750w, /images/Slider/Slider_pc_4.png 1200w"
-                sizes="(max-width: 1099px) 750px, 1200px" alt="Náramek">
+                <img class="glide__slide-img" src="/images/Slider/Slider_mobile_5.png" alt="Foto 5">
             </li>
             <li class="glide__slide">
-                <img src="/images/Slider/Slider_mobile_5.png"
-                srcset="/images/Slider/Slider_mobile_5.png 750w, /images/Slider/Slider_pc_5.png 1200w"
-                sizes="(max-width: 1099px) 750px, 1200px" alt="Náramek">
+                <img class="glide__slide-img" src="/images/Slider/Slider_mobile_6.png" alt="Foto 6">
             </li>
             <li class="glide__slide">
-                <img src="/images/Slider/Slider_mobile_6.png"
-                srcset="/images/Slider/Slider_mobile_6.png 750w, /images/Slider/Slider_pc_6.png 1200w"
-                sizes="(max-width: 1099px) 750px, 1200px" alt="Náramek">
+                <img class="glide__slide-img" src="/images/Slider/Slider_mobile_7.png" alt="Foto 7">
             </li>
             <li class="glide__slide">
-                <img src="/images/Slider/Slider_mobile_7.png"
-                srcset="/images/Slider/Slider_mobile_7.png 750w, /images/Slider/Slider_pc_7.png 1200w"
-                sizes="(max-width: 1099px) 750px, 1200px" alt="Náramek">
+                <img class="glide__slide-img" src="/images/Slider/Slider_mobile_8.png" alt="Foto 8">
             </li>
             <li class="glide__slide">
-                <img src="/images/Slider/Slider_mobile_8.png"
-                srcset="/images/Slider/Slider_mobile_8.png 750w, /images/Slider/Slider_pc_8.png 1200w"
-                sizes="(max-width: 1099px) 750px, 1200px" alt="Náramek">
+                <img class="glide__slide-img" src="/images/Slider/Slider_mobile_9.png" alt="Foto 9">
             </li>
             <li class="glide__slide">
-                <img src="/images/Slider/Slider_mobile_9.png"
-                srcset="/images/Slider/Slider_mobile_9.png 750w, /images/Slider/Slider_pc_9.png 1200w"
-                sizes="(max-width: 1099px) 750px, 1200px" alt="Náramek">
+                <img class="glide__slide-img" src="/images/Slider/Slider_mobile_10.png" alt="Foto 10">
             </li>
             <li class="glide__slide">
-                <img src="/images/Slider/Slider_mobile_10.png"
-                srcset="/images/Slider/Slider_mobile_10.png 750w, /images/Slider/Slider_pc_10.png 1200w"
-                sizes="(max-width: 1099px) 750px, 1200px" alt="Náramek">
+                <img class="glide__slide-img" src="/images/Slider/Slider_mobile_11.png" alt="Foto 11">
             </li>
             <li class="glide__slide">
-                <img src="/images/Slider/Slider_mobile_11.png"
-                srcset="/images/Slider/Slider_mobile_11.png 750w, /images/Slider/Slider_pc_11.png 1200w"
-                sizes="(max-width: 1099px) 750px, 1200px" alt="Náramek">
-            </li>
-            <li class="glide__slide">
-                <img src="/images/Slider/Slider_mobile_12.png"
-                srcset="/images/Slider/Slider_mobile_12.png 750w, /images/Slider/Slider_pc_12.png 1200w"
-                sizes="(max-width: 1099px) 750px, 1200px" alt="Náramek">
+                <img class="glide__slide-img" src="/images/Slider/Slider_mobile_12.png" alt="Foto 12">
             </li>
         </ul>
     </div>
@@ -121,9 +92,27 @@ title: Úvod
     </div>
 </div>
 
-<!-- Glide.js JavaScript-->
+<!-- Glide.js JavaScript -->
 <script src="/js/glide.min.js"></script>
 
 <script>
-  new Glide('.glide').mount()
+    new Glide('.glide', {
+        type: 'carousel',
+        autoplay: 2000,
+        animationDuration: 2500,
+        breakpoints: {
+            600: {
+                perView: 1,
+            },
+            800: {
+                perView: 2,
+            },
+            1100: {
+                perView: 3,
+            },
+            2000: {
+                perView: 4,
+            }
+        }
+    }).mount()
 </script>

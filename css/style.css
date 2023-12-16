@@ -297,6 +297,9 @@ h4 {
   margin-left: 1rem;
   margin-right: 1rem;
 }
+.main .glide__slide-img {
+  max-width: 100%;
+}
 .main__text {
   text-align: center;
 }

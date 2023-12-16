@@ -12,6 +12,12 @@
     margin-left: variables.$spacer;
     margin-right: variables.$spacer;
 
+    .glide {
+        &__slide-img {
+            max-width: 100%;
+        }
+    }
+
     &__text {
         text-align: center;
 
