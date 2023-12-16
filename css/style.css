@@ -983,6 +983,7 @@ h4 {
 .cart-thanks__box {
   display: flex;
   height: 15rem;
+  min-height: 100vh;
 }
 .cart-thanks__text {
   display: flex;

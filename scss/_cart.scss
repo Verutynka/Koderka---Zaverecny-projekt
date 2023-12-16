@@ -526,6 +526,7 @@
     &__box {
         display: flex;
         height: 15rem;
+        min-height: 100vh;
     }
     &__text {
         display: flex;
