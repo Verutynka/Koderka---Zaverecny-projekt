@@ -1,0 +1,31 @@
+---
+layout: base.njk
+title: Shopping cart
+---
+
+<div class="cart">
+
+    <div class="cart__back-top"><a href="/" class="back-link">Zpět do obchodu</a></div>
+
+    <div class="cart__nav">
+        <ul class="cart__nav-menu">
+            <li class="cart__nav-list--one">1. Nákupní košík</li>
+            <li class="cart__nav-list--two">2. Doprava a platba</li>
+            <li class="cart__nav-list--three">3. Informace o Vás</li>
+        </ul>
+    </div>
+
+    <div class="content">
+
+        {{ content | safe }}
+        
+    </div>
+
+    <div class="cart__next-step">
+        <div class="cart__back-bottom"><a href="/" class="back-link">Zpět do obchodu</a></div>
+
+        <div class="button-big"><a href="/cart-payment/" class="button-link">Pokračovat</a></div>
+    </div>
+
+</div>
+

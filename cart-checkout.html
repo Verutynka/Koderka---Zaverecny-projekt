@@ -3,60 +3,100 @@ layout: base.njk
 title: Shopping cart
 ---
 
------rozmyslet si, jak udělat šablonu na zbylá okna košíku, záhlaví a čudliky by určitě šli
+<div class="cart-check">
 
-Zpět do obchodu
+    <div class="cart__back-top"><a href="/" class="back-link">Zpět do obchodu</a></div>
 
-1. Nákupní košík
+    <div class="cart-check__nav">
+        <ul class="cart-check__nav-menu">
+            <li class="cart-check__nav-list--one">1. Nákupní košík</li>
+            <li class="cart-check__nav-list--two">2. Doprava a platba</li>
+            <li class="cart-check__nav-list--three">3. Informace o Vás</li>
+        </ul>
+    </div>
 
-2. Doprava a platba
+    <div class="cart-checkout">
 
-3. Informace o Vás
+        <div class="cart-checkout__box">
 
-Osobní údaje
+            <div class="cart-checkout__box-title"><h3>Osobní údaje</h3></div>
 
-Přihlásit se do svého účtu
+            <div class="input">
+                <input type="text" id="nameInput" class="input__field" placeholder=" " required>
+                <label for="nameInput" class="input__label">Jméno</label>
+            </div>
 
-Pole Jméno a příjmení
+            <div class="input">
+                <input type="text" id="surnameInput" class="input__field" placeholder=" " required>
+                <label for="nameInput" class="input__label">Příjmení</label>
+            </div>
 
-Pole E-mail
+            <div class="input">
+                <input type="email" id="emailInput" class="input__field" placeholder=" " required>
+                <label for="nameInput" class="input__label">E-mail</label>
+            </div>
+        
+            <div class="input">
+                <input type="tel" id="phoneInput" class="input__field" placeholder=" " required>
+                <label for="nameInput" class="input__label">Telefon</label>
+            </div>
+        </div>
 
-Pole Telefon
+        <div class="cart-checkout__box">
 
-Potvrdit
+            <div class="cart-checkout__box-title"><h3>Fakturační údaje</h3></div>
 
+            <div class="input">
+                <input type="text" id="streetInput" class="input__field" placeholder=" " required>
+                <label for="nameInput" class="input__label">Ulice</label>
+            </div>
 
-Fakturační údaje
+            <div class="input">
+                <input type="number" id="numberInput" class="input__field" placeholder=" ">
+                <label for="nameInput" class="input__label">Číslo popisné</label>
+            </div>
 
-Pole Ulice
+            <div class="input">
+                <input type="text" id="cityInput" class="input__field" placeholder=" " required>
+                <label for="nameInput" class="input__label">Město</label>
+            </div>
 
-Pole Číslo domu
+            <div class="input">
+                <input type="number" id="zipInput" class="input__field" placeholder=" " required>
+                <label for="nameInput" class="input__label">PSČ</label>
+            </div>
 
-Pole Město
+            <div class="input">
+                <input type="text" id="countryInput" class="input__field" placeholder=" " required>
+                <label for="nameInput" class="input__label">Země</label>
+            </div>
+        
+        </div>
 
-Pole PSČ
+        <div class="cart__terms-conditions">
+            <input type="checkbox" id="agreement" class="input__checkbox" required>
+            <label for="agreement">Souhlasím s obchodními podmínkami</label>
+        </div>
 
-Pole Země
+        <table class="cart-overview__table">
+            <tr class="cart-overview__table-item">
+                <td class="cart-overview__table-order-price">
+                    <span class="cart-overview__price-primary">Celkem k úhradě:</span>
+                    <span class="cart-overview__price-secondary">Cena bez DPH:</span>
+                </td>
 
-() Doručit na jinou adresu
+                <td class="cart-overview__table-order-summ">
+                    <strong class="cart-overview__summ-primary">999 Kč</strong>
+                    <span class="cart-overview__summ-secondary">849,15 Kč</span>
+                </td>
+            </tr>
+        </table>
+    </div>
 
-Pole Ulice
+    <div class="cart__next-step">
+        <div class="cart__back-bottom"><a href="/" class="back-link">Zpět do obchodu</a></div>
 
-Pole Číslo domu
+        <div class="button-big"><a href="/cart-thanks/" class="button-link">Objednat</a></div>
+    </div>
 
-Pole Město
-
-Pole PSČ
-
-
-() Kliknutím na tlačítko Objednat souhlasíte s našimi obchodními podmínkami.
-
-Celkem k úhradě
-Suma 999 Kč
-Celkem bez DPH
-Suma - DPH
-
-Zpět
-
-Objednat
-s povinností platby
+</div>

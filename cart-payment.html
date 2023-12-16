@@ -3,59 +3,137 @@ layout: base.njk
 title: Shopping cart
 ---
 
------rozmyslet si, jak udělat šablonu na zbylá okna košíku, záhlaví a čudliky by určitě šli
+<div class="cart-pay">
 
-Zpět do obchodu
+    <div class="cart__back-top"><a href="/" class="back-link">Zpět do obchodu</a></div>
 
-1. Nákupní košík
+    <div class="cart-pay__nav">
+        <ul class="cart-pay__nav-menu">
+            <li class="cart-pay__nav-list--one">1. Nákupní košík</li>
+            <li class="cart-pay__nav-list--two">2. Doprava a platba</li>
+            <li class="cart-pay__nav-list--three">3. Informace o Vás</li>
+        </ul>
+    </div>
 
-2. Doprava a platba
+    <div class="cart-payment">
 
-3. Informace o Vás
+        <div class="cart-payment__box">
 
-Zvolte způsob dopravy
+            <div class="cart-payment__box-title"><h3>Zvolte způsob dopravy</h3></div>
 
-() Zásilkovna - Pobočky
-Zvolte pobočku
-80 Kč
+            <table class="cart-payment__table">
+                <tr class="cart-payment__table-item">
+                    <td class="cart-payment__method">
+                        <input type="radio" name="doprava" id="zasil-pobocky">
+                        <label for="zasil-pobocky" class="cart-payment__label">Zásilkovna - pobočky</label>
+                    </td>
 
-() Zásilkovna - Doručení na adresu
-80 Kč
+                    <td class="cart-payment__price">
+                        <p class="cart-payment__price-item">89 Kč</p>
+                    </td>
 
-() Česká pošta - Balíkovna
-Zvolte pobočku
-80 Kč
+                    <td class="cart-payment__method">
+                        <input type="radio" name="doprava" id="zasil-doruceni">
+                        <label for="zasil-doruceni" class="cart-payment__label">Zásilkovna - doručení na adresu</label>
+                    </td>
 
-() Česká pošta - Balík do ruky
-80 Kč
+                    <td class="cart-payment__price">
+                        <p class="cart-payment__price-item">89 Kč</p>
+                    </td>
 
-() Osobní odběr Brno
-Po - Pá 9:00 - 13:00
-Zdarma
+                    <td class="cart-payment__method">
+                        <input type="radio" name="doprava" id="ceska-balikovna">
+                        <label for="ceska-balikovna" class="cart-payment__label">Česká pošta - Balíkovna</label>
+                    </td>
 
+                    <td class="cart-payment__price">
+                        <p class="cart-payment__price-item">89 Kč</p>
+                    </td>
 
-Zvolte způsob platby
+                    <td class="cart-payment__method">
+                        <input type="radio" name="doprava" id="ceska-balikdr">
+                        <label for="ceska-balikdr" class="cart-payment__label">Česká pošta - Balík do ruky</label>
+                    </td>
 
-() Online platba kartou
-Okamžitá platba přes platební bránu GoPay
-Zdarma
+                    <td class="cart-payment__price">
+                        <p class="cart-payment__price-item">89 Kč</p>
+                    </td>
 
-() Online bankovní převod
-Rychlý převod peněz
-Zdarma
+                    <td class="cart-payment__method">
+                        <input type="radio" name="doprava" id="osobni">
+                        <label for="osobni" class="cart-payment__label">Osobní odběr Brno</label>
+                    </td>
 
-() PayPal
-Okamžitá platba přes elektronickou peněženku
-Zdarma
+                    <td class="cart-payment__price">
+                        <p class="cart-payment__price-item">Zdarma</p>
+                    </td>
 
-() Google Pay
-Okamžitá platba přes elektronickou peněženku
-Zdarma
+                </tr>
+            </table>
 
-() Převodem
-Zdarma
+        </div>
 
+        <div class="cart-payment__box">
 
-Zpět
+            <div class="cart-payment__box-title"><h3>Zvolte způsob platby</h3></div>
 
-Pokračovat
+            <table class="cart-payment__table">
+                <tr class="cart-payment__table-item">
+                    <td class="cart-payment__method">
+                        <input type="radio" name="platba" id="online-gopay">
+                        <label for="online-gopay" class="cart-payment__label">Online platba kartou - GoPay</label>
+                    </td>
+
+                    <td class="cart-payment__price">
+                        <p class="cart-payment__price-item">Zdarma</p>
+                    </td>
+
+                    <td class="cart-payment__method">
+                        <input type="radio" name="platba" id="online-prevod">
+                        <label for="online-prevod" class="cart-payment__label">Online bankovní převod</label>
+                    </td>
+
+                    <td class="cart-payment__price">
+                        <p class="cart-payment__price-item">Zdarma</p>
+                    </td>
+
+                    <td class="cart-payment__method">
+                        <input type="radio" name="platba" id="paypal">
+                        <label for="paypal" class="cart-payment__label">PayPal</label>
+                    </td>
+
+                    <td class="cart-payment__price">
+                        <p class="cart-payment__price-item">Zdarma</p>
+                    </td>
+
+                    <td class="cart-payment__method">
+                        <input type="radio" name="platba" id="google-pay">
+                        <label for="google-pay" class="cart-payment__label">Google Pay</label>
+                    </td>
+
+                    <td class="cart-payment__price">
+                        <p class="cart-payment__price-item">Zdarma</p>
+                    </td>
+
+                    <td class="cart-payment__method">
+                        <input type="radio" name="platba" id="prevod">
+                        <label for="prevod" class="cart-payment__label">Bankovní převod</label>
+                    </td>
+
+                    <td class="cart-payment__price">
+                        <p class="cart-payment__price-item">Zdarma</p>
+                    </td>
+
+                </tr>
+            </table>
+            
+        </div>
+    </div>
+
+    <div class="cart__next-step">
+        <div class="cart__back-bottom"><a href="/" class="back-link">Zpět do obchodu</a></div>
+
+        <div class="button-big"><a href="/cart-checkout/" class="button-link">Pokračovat</a></div>
+    </div>
+
+</div>
